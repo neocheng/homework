@@ -8,6 +8,8 @@ public class Ticket {
         System.out.println("*** This JAVA ***");
         System.out.println("Please enter number of tickets:");
         int iTickets = new Scanner(System.in).nextInt();
+        if(iTickets == -1)
+            System.exit(0);
         System.out.println("How many round-trip tickets:");
         int iRoundTtrip = new Scanner(System.in).nextInt();
 
@@ -17,6 +19,7 @@ public class Ticket {
             System.out.println("Total tickets: " + iTickets);
             System.out.println("Round-trip: " + iRoundTtrip);
             System.out.println("Total: " + getiTotalPrice(iTickets, iRoundTtrip));
+            getTotal();
         }
     }
 
@@ -28,5 +31,4 @@ public class Ticket {
         System.out.println("*** error, please enter again ***");
         getTotal();
     }
-
 }
