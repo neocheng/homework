@@ -4,7 +4,8 @@ import java.util.*
 import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
-    TicketKotlin().getTotal()
+//    TicketKotlin().getTotal()
+    BoxTesterKt().boxInit()
 }
 
 class TicketKotlin {
@@ -34,4 +35,26 @@ class TicketKotlin {
         println("*** error, please enter again ***")
         getTotal()
     }
+}
+
+class BoxTesterKt {
+    fun boxInit() {
+        println("*** This Kotlin ***")
+        println("Please enter object's length: ")
+        val fLength = Scanner(System.`in`).nextFloat()
+
+        println("Please enter object's width: ")
+        val fWidth = Scanner(System.`in`).nextFloat()
+
+        println("Please enter object's height: ")
+        val iHeight = Scanner(System.`in`).nextInt()
+
+        if (Box3kt().validate(fLength, fWidth, iHeight))
+            println("Box3")
+        else if (Box5kt().validate(fLength, fWidth, iHeight))
+            println("Box5")
+        else
+            println("*** The box does not match ***")
+    }
+
 }
